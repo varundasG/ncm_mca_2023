@@ -24,8 +24,33 @@
     </header>
     
     <section class="home">
-        <div class="content">
+        <video class="video-slide active" src="vedios/vedio_all.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="vedios/vedio_gang.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="vedios/clg_vedio_1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="vedios/clg_vedio_2.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="vedios/3.mp4" autoplay muted loop></video>
+        <div class="content active">
             <h1>Cherishing the <br><span>Moments</span></h1>
+            <p>College is a journey filled with unforgettable moments: the thrill of new experiences, the bond of late-night study sessions, the joy of lasting friendships, and the growth that comes from challenges and triumphs alike. It's a time when we discover our passions, find our voice, and create memories that will warm our hearts for a lifetime</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Nothing but<br><span>good times</span></h1>
+            <p>College is a journey filled with unforgettable moments: the thrill of new experiences, the bond of late-night study sessions, the joy of lasting friendships, and the growth that comes from challenges and triumphs alike. It's a time when we discover our passions, find our voice, and create memories that will warm our hearts for a lifetime</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Lost in<br><span>memories</span></h1>
+            <p>College is a journey filled with unforgettable moments: the thrill of new experiences, the bond of late-night study sessions, the joy of lasting friendships, and the growth that comes from challenges and triumphs alike. It's a time when we discover our passions, find our voice, and create memories that will warm our hearts for a lifetime</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Moments that<br><span>sparkle</span></h1>
+            <p>College is a journey filled with unforgettable moments: the thrill of new experiences, the bond of late-night study sessions, the joy of lasting friendships, and the growth that comes from challenges and triumphs alike. It's a time when we discover our passions, find our voice, and create memories that will warm our hearts for a lifetime</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Making everyday<br><span>Count</span></h1>
             <p>College is a journey filled with unforgettable moments: the thrill of new experiences, the bond of late-night study sessions, the joy of lasting friendships, and the growth that comes from challenges and triumphs alike. It's a time when we discover our passions, find our voice, and create memories that will warm our hearts for a lifetime</p>
             <a href="#">Read More</a>
         </div>
@@ -33,6 +58,13 @@
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
         </div>
     </section>
 
@@ -45,6 +77,37 @@
             menuBtn.classList.toggle("active");
             navigation.classList.toggle("active");
         });
+
+        //js for video slider navigation
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+        
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i)
+            });
+        });
+    
     </script>
     
 </body>
